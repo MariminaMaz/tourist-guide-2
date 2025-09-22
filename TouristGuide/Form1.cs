@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-// This is a class for TouristGuide
+
 
 namespace TouristGuide
 {
