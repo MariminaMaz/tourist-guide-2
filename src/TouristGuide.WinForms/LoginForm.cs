@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace TouristGuide.WinForms
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : BaseForm
     {
         public LoginForm()
         {
@@ -63,6 +63,11 @@ namespace TouristGuide.WinForms
             MainForm main = new MainForm();
             main.Show();
             this.Hide();
+        }
+
+        private void textBox_username_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

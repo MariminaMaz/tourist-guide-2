@@ -1,6 +1,6 @@
 ﻿namespace TouristGuide.WinForms
 {
-    partial class MainForm
+    partial class MainForm :BaseForm
     {
         /// <summary>
         /// Required designer variable.

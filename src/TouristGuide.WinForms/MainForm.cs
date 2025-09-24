@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TouristGuide.WinForms
 {
-    public partial class MainForm : Form
+    public partial class MainForm : BaseForm
     {
         private Label lblWelcome;
         private Button btnBeaches;

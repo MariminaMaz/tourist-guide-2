@@ -108,6 +108,7 @@
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(149, 22);
             this.textBox_username.TabIndex = 3;
+            this.textBox_username.TextChanged += new System.EventHandler(this.textBox_username_TextChanged);
             // 
             // label2
             // 
