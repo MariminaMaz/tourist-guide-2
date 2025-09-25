@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TouristGuide.WinForms
 {
-    public partial class MainForm : Form
+    public partial class MainForm : BaseForm
     {
         private Label lblWelcome;
         private Button btnBeaches;
@@ -21,6 +21,21 @@ namespace TouristGuide.WinForms
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
