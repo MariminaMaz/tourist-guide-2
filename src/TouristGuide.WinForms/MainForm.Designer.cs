@@ -30,15 +30,16 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.button_History = new System.Windows.Forms.Button();
+            this.button_beaches = new System.Windows.Forms.Button();
+            this.button_attractions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.ForeColor = System.Drawing.Color.Brown;
+            this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(35, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 22);
@@ -58,32 +59,39 @@
     "οφορίες.";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // label2
+            // button_History
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Brown;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(78, 306);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Παραλίες";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.button_History.Location = new System.Drawing.Point(252, 383);
+            this.button_History.Name = "button_History";
+            this.button_History.Size = new System.Drawing.Size(75, 23);
+            this.button_History.TabIndex = 5;
+            this.button_History.Text = "Ιστορικό";
+            this.button_History.UseVisualStyleBackColor = true;
+            this.button_History.Click += new System.EventHandler(this.button_History_Click);
             // 
-            // label3
+            // button_beaches
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Brown;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(342, 306);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Αξιοθέατα";
+            this.button_beaches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button_beaches.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button_beaches.Location = new System.Drawing.Point(104, 327);
+            this.button_beaches.Name = "button_beaches";
+            this.button_beaches.Size = new System.Drawing.Size(87, 23);
+            this.button_beaches.TabIndex = 6;
+            this.button_beaches.Text = "Παραλίες";
+            this.button_beaches.UseVisualStyleBackColor = false;
+            this.button_beaches.Click += new System.EventHandler(this.button_beaches_Click);
+            // 
+            // button_attractions
+            // 
+            this.button_attractions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button_attractions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button_attractions.Location = new System.Drawing.Point(379, 327);
+            this.button_attractions.Name = "button_attractions";
+            this.button_attractions.Size = new System.Drawing.Size(83, 23);
+            this.button_attractions.TabIndex = 7;
+            this.button_attractions.Text = "Αξιοθέατα";
+            this.button_attractions.UseVisualStyleBackColor = false;
+            this.button_attractions.Click += new System.EventHandler(this.button_attractions_Click);
             // 
             // MainForm
             // 
@@ -91,16 +99,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(762, 438);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button_attractions);
+            this.Controls.Add(this.button_beaches);
+            this.Controls.Add(this.button_History);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.richTextBox1, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.button_History, 0);
+            this.Controls.SetChildIndex(this.button_beaches, 0);
+            this.Controls.SetChildIndex(this.button_attractions, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,7 +121,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button_History;
+        private System.Windows.Forms.Button button_beaches;
+        private System.Windows.Forms.Button button_attractions;
     }
 }

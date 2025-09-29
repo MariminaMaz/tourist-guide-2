@@ -43,8 +43,19 @@ namespace TouristGuide.WinForms
 
                     if (count == 1)
                     {
+                        // Βρες και το UserId
+                        string idQuery = "SELECT User_id FROM Users WHERE Username=@username";
+                        using (SQLiteCommand idCmd = new SQLiteCommand(idQuery, conn))
+                        {
+                            idCmd.Parameters.AddWithValue("@username", username);
+                            int userId = Convert.ToInt32(idCmd.ExecuteScalar());
+
+                            Session.IsVisitor = false;
+                            Session.UserId = userId;
+                            Session.Username = username;
+                        }
+
                         MessageBox.Show("Login successful!");
-                        // Άνοιξε το main form
                         MainForm main = new MainForm();
                         main.Show();
                         this.Hide();
@@ -59,7 +70,12 @@ namespace TouristGuide.WinForms
 
         private void button_visitor_Click(object sender, EventArgs e)
         {
+            Session.IsVisitor = true;
+            Session.UserId = 0;
+            Session.Username = "Visitor";
+
             MessageBox.Show("Login as Visitor!");
+
             MainForm main = new MainForm();
             main.Show();
             this.Hide();
