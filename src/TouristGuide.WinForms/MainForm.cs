@@ -40,7 +40,9 @@ namespace TouristGuide.WinForms
 
         private void button_beaches_Click(object sender, EventArgs e)
         {
-
+            BeachesForm main = new BeachesForm();
+            main.Show();
+            this.Hide();
         }
 
         private void button_attractions_Click(object sender, EventArgs e)
