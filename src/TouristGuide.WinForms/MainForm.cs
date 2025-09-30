@@ -16,7 +16,6 @@ namespace TouristGuide.WinForms
         private Button btnBeaches;
         private Button btnAttractions;
         private Button btnRestaurants;
-
     
         public MainForm()
         {
@@ -47,7 +46,9 @@ namespace TouristGuide.WinForms
 
         private void button_attractions_Click(object sender, EventArgs e)
         {
-
+            PointsOfInterestForm main = new PointsOfInterestForm();
+            main.Show();
+            this.Hide();
         }
 
         private void button_History_Click(object sender, EventArgs e)
