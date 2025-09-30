@@ -41,70 +41,86 @@
             // 
             // btn03
             // 
-            this.btn03.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn03.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn03.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.point04;
+            this.btn03.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn03.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btn03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btn03.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn03.ImageKey = "(none)";
             this.btn03.Location = new System.Drawing.Point(572, 47);
             this.btn03.Name = "btn03";
             this.btn03.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn03.Size = new System.Drawing.Size(199, 159);
             this.btn03.TabIndex = 10;
-            this.btn03.Text = "button3";
-            this.btn03.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn03.Text = "Lake Titicaca";
+            this.btn03.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn03.UseVisualStyleBackColor = true;
             this.btn03.Click += new System.EventHandler(this.OnPointClick);
             // 
             // btn06
             // 
-            this.btn06.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn06.Image = global::TouristGuide.WinForms.Properties.Resources.poiny10;
+            this.btn06.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.point09;
+            this.btn06.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn06.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btn06.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn06.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btn06.Location = new System.Drawing.Point(572, 245);
             this.btn06.Name = "btn06";
             this.btn06.Size = new System.Drawing.Size(199, 159);
             this.btn06.TabIndex = 13;
-            this.btn06.Text = "button4";
-            this.btn06.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn06.Text = "Sacred Valley";
+            this.btn06.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn06.UseVisualStyleBackColor = true;
             this.btn06.Click += new System.EventHandler(this.OnPointClick);
             // 
             // btn05
             // 
-            this.btn05.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn05.Image = global::TouristGuide.WinForms.Properties.Resources.point09;
+            this.btn05.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.peru_backgr;
+            this.btn05.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn05.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btn05.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn05.Location = new System.Drawing.Point(298, 245);
             this.btn05.Name = "btn05";
             this.btn05.Size = new System.Drawing.Size(199, 159);
             this.btn05.TabIndex = 12;
-            this.btn05.Text = "button5";
-            this.btn05.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn05.Text = "Colca Canyon";
+            this.btn05.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn05.UseVisualStyleBackColor = true;
             this.btn05.Click += new System.EventHandler(this.OnPointClick);
             // 
             // btn04
             // 
-            this.btn04.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn04.Image = global::TouristGuide.WinForms.Properties.Resources.point08;
+            this.btn04.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.point08;
+            this.btn04.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn04.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btn04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn04.Location = new System.Drawing.Point(30, 245);
             this.btn04.Name = "btn04";
             this.btn04.Size = new System.Drawing.Size(199, 159);
             this.btn04.TabIndex = 11;
-            this.btn04.Text = "button6";
-            this.btn04.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn04.Text = "Nazca Lines";
+            this.btn04.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn04.UseVisualStyleBackColor = true;
             this.btn04.Click += new System.EventHandler(this.OnPointClick);
             // 
             // btn02
             // 
-            this.btn02.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn02.Image = global::TouristGuide.WinForms.Properties.Resources.point04;
+            this.btn02.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.point05;
+            this.btn02.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn02.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btn02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn02.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn02.Location = new System.Drawing.Point(298, 47);
             this.btn02.Name = "btn02";
             this.btn02.Size = new System.Drawing.Size(199, 159);
             this.btn02.TabIndex = 8;
-            this.btn02.Text = "button2";
-            this.btn02.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn02.Text = "Cusco";
+            this.btn02.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn02.UseVisualStyleBackColor = true;
             this.btn02.Click += new System.EventHandler(this.OnPointClick);
             // 
@@ -122,15 +138,18 @@
             // 
             // btn01
             // 
-            this.btn01.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn01.Image = global::TouristGuide.WinForms.Properties.Resources.point02;
+            this.btn01.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.point02;
+            this.btn01.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn01.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btn01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn01.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn01.Location = new System.Drawing.Point(30, 47);
             this.btn01.Name = "btn01";
             this.btn01.Size = new System.Drawing.Size(199, 159);
             this.btn01.TabIndex = 6;
-            this.btn01.Text = "Guanama Bay";
-            this.btn01.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn01.Text = "Machu Picchu";
+            this.btn01.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn01.UseVisualStyleBackColor = true;
             this.btn01.Click += new System.EventHandler(this.OnPointClick);
             // 

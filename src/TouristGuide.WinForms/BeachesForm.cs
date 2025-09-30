@@ -103,5 +103,10 @@ namespace TouristGuide.WinForms
             var previous = new MainForm();
             previous.Show();    
         }
+
+        private void BeachesForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
