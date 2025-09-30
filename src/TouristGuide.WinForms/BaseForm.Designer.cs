@@ -53,19 +53,19 @@
             this.εκκαθάρισηToolStripMenuItem,
             this.αποθήκευσηToolStripMenuItem});
             this.ιστορικόToolStripMenuItem.Name = "ιστορικόToolStripMenuItem";
-            this.ιστορικόToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ιστορικόToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.ιστορικόToolStripMenuItem.Text = "Ιστορικό ";
             // 
             // εκκαθάρισηToolStripMenuItem
             // 
             this.εκκαθάρισηToolStripMenuItem.Name = "εκκαθάρισηToolStripMenuItem";
-            this.εκκαθάρισηToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.εκκαθάρισηToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.εκκαθάρισηToolStripMenuItem.Text = "Εκκαθάριση";
             // 
             // αποθήκευσηToolStripMenuItem
             // 
             this.αποθήκευσηToolStripMenuItem.Name = "αποθήκευσηToolStripMenuItem";
-            this.αποθήκευσηToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.αποθήκευσηToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.αποθήκευσηToolStripMenuItem.Text = "Αποθήκευση";
             // 
             // aboutToolStripMenuItem
@@ -73,12 +73,14 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // BaseForm
             // 
