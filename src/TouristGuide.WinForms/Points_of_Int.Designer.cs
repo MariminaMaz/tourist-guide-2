@@ -36,6 +36,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btn01 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn03
@@ -145,11 +146,22 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Points_of_Int
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(30, 410);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(74, 28);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Back";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // PointsOfInterestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btn06);
             this.Controls.Add(this.btn05);
             this.Controls.Add(this.btn04);
@@ -158,9 +170,19 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn01);
             this.Controls.Add(this.button1);
-            this.Name = "Points_of_Int";
+            this.Name = "PointsOfInterestForm";
             this.Text = "Points_of_Int";
+            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.btn01, 0);
+            this.Controls.SetChildIndex(this.button2, 0);
+            this.Controls.SetChildIndex(this.btn02, 0);
+            this.Controls.SetChildIndex(this.btn03, 0);
+            this.Controls.SetChildIndex(this.btn04, 0);
+            this.Controls.SetChildIndex(this.btn05, 0);
+            this.Controls.SetChildIndex(this.btn06, 0);
+            this.Controls.SetChildIndex(this.button3, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -174,5 +196,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn01;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

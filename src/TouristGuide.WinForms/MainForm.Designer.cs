@@ -28,12 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button_History = new System.Windows.Forms.Button();
             this.button_beaches = new System.Windows.Forms.Button();
             this.button_attractions = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.MistyRose;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(39, 117);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(352, 106);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "Καλώς ήρθατε στο τουριστικό οδηγό για τη @@@ παρακάτω θα βρείτε περισσοτέρες πληρ" +
+    "οφορίες.";
+            // 
+            // button_History
+            // 
+            this.button_History.Location = new System.Drawing.Point(250, 286);
+            this.button_History.Name = "button_History";
+            this.button_History.Size = new System.Drawing.Size(96, 65);
+            this.button_History.TabIndex = 5;
+            this.button_History.Text = "Ιστορικό";
+            this.button_History.UseVisualStyleBackColor = true;
+            this.button_History.Click += new System.EventHandler(this.button_History_Click);
+            // 
+            // button_beaches
+            // 
+            this.button_beaches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button_beaches.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button_beaches.Location = new System.Drawing.Point(104, 286);
+            this.button_beaches.Name = "button_beaches";
+            this.button_beaches.Size = new System.Drawing.Size(112, 64);
+            this.button_beaches.TabIndex = 6;
+            this.button_beaches.Text = "Παραλίες";
+            this.button_beaches.UseVisualStyleBackColor = false;
+            this.button_beaches.Click += new System.EventHandler(this.button_beaches_Click);
+            // 
+            // button_attractions
+            // 
+            this.button_attractions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button_attractions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button_attractions.Location = new System.Drawing.Point(379, 286);
+            this.button_attractions.Name = "button_attractions";
+            this.button_attractions.Size = new System.Drawing.Size(115, 64);
+            this.button_attractions.TabIndex = 7;
+            this.button_attractions.Text = "Αξιοθέατα";
+            this.button_attractions.UseVisualStyleBackColor = false;
+            this.button_attractions.Click += new System.EventHandler(this.button_attractions_Click);
             // 
             // label1
             // 
@@ -47,63 +92,20 @@
             this.label1.Text = "Τουριστικός οδηγός\r\n";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.MistyRose;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(39, 119);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(197, 104);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "Καλώς ήρθατε στο τουριστικό οδηγό για τη @@@ παρακάτω θα βρείτε περισσοτέρες πληρ" +
-    "οφορίες.";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
-            // button_History
-            // 
-            this.button_History.Location = new System.Drawing.Point(252, 383);
-            this.button_History.Name = "button_History";
-            this.button_History.Size = new System.Drawing.Size(75, 23);
-            this.button_History.TabIndex = 5;
-            this.button_History.Text = "Ιστορικό";
-            this.button_History.UseVisualStyleBackColor = true;
-            this.button_History.Click += new System.EventHandler(this.button_History_Click);
-            // 
-            // button_beaches
-            // 
-            this.button_beaches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button_beaches.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button_beaches.Location = new System.Drawing.Point(104, 327);
-            this.button_beaches.Name = "button_beaches";
-            this.button_beaches.Size = new System.Drawing.Size(87, 23);
-            this.button_beaches.TabIndex = 6;
-            this.button_beaches.Text = "Παραλίες";
-            this.button_beaches.UseVisualStyleBackColor = false;
-            this.button_beaches.Click += new System.EventHandler(this.button_beaches_Click);
-            // 
-            // button_attractions
-            // 
-            this.button_attractions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button_attractions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button_attractions.Location = new System.Drawing.Point(379, 327);
-            this.button_attractions.Name = "button_attractions";
-            this.button_attractions.Size = new System.Drawing.Size(83, 23);
-            this.button_attractions.TabIndex = 7;
-            this.button_attractions.Text = "Αξιοθέατα";
-            this.button_attractions.UseVisualStyleBackColor = false;
-            this.button_attractions.Click += new System.EventHandler(this.button_attractions_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.peru_backgr;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(762, 438);
             this.Controls.Add(this.button_attractions);
             this.Controls.Add(this.button_beaches);
             this.Controls.Add(this.button_History);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -118,11 +120,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button_History;
         private System.Windows.Forms.Button button_beaches;
         private System.Windows.Forms.Button button_attractions;
+        private System.Windows.Forms.Label label1;
     }
 }

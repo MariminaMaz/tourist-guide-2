@@ -36,6 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -54,7 +55,6 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button3.Image = global::TouristGuide.WinForms.Properties.Resources.paralia3;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button3.ImageKey = "(none)";
             this.button3.Location = new System.Drawing.Point(571, 47);
@@ -146,11 +146,22 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.OnBeachClick);
             // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(29, 415);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(75, 23);
+            this.back.TabIndex = 6;
+            this.back.Text = "Back";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
             // BeachesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
@@ -169,6 +180,7 @@
             this.Controls.SetChildIndex(this.button6, 0);
             this.Controls.SetChildIndex(this.button5, 0);
             this.Controls.SetChildIndex(this.button4, 0);
+            this.Controls.SetChildIndex(this.back, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +196,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button back;
     }
 }

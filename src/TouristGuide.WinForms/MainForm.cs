@@ -27,11 +27,6 @@ namespace TouristGuide.WinForms
 
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -67,15 +62,11 @@ namespace TouristGuide.WinForms
         {
             if (Session.IsVisitor)
             {
-                MessageBox.Show("Welcome Visitor! Limited functionality.");
-
                 // Κρύβει το κουμπί Ιστορικό για Visitor
                 button_History.Visible = false;
             }
             else
             {
-                MessageBox.Show($"Welcome {Session.Username}!");
-
                 // Ο User βλέπει το κουμπί Ιστορικό
                 button_History.Visible = true;
             }

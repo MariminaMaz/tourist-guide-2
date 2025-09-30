@@ -73,6 +73,16 @@ namespace TouristGuide.WinForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap main_background {
+            get {
+                object obj = ResourceManager.GetObject("main_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap paralia1 {
             get {
                 object obj = ResourceManager.GetObject("paralia1", resourceCulture);
@@ -126,6 +136,16 @@ namespace TouristGuide.WinForms.Properties {
         internal static System.Drawing.Bitmap paralia6 {
             get {
                 object obj = ResourceManager.GetObject("paralia6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap peru_backgr {
+            get {
+                object obj = ResourceManager.GetObject("peru_backgr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -108,5 +108,13 @@ namespace TouristGuide.WinForms
                 cmd.ExecuteNonQuery();
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            this.Hide();         // κρύβεις την τρέχουσα
+            var previous = new MainForm();
+            previous.Show();     
+        }
     }
 }
