@@ -14,16 +14,27 @@ namespace TouristGuide.WinForms
         {
             InitializeComponent();
 
-            _dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tourist_Guide.db");
+            // --- Βρες το σωστό path για τη βάση ---
+            _dbPath = Path.Combine(Application.StartupPath, @"..\..\Tourist_Guide.db");
+            _dbPath = Path.GetFullPath(_dbPath);
             _connStr = $"Data Source={_dbPath};Version=3;";
 
-            // Συνδέουμε όλα τα κουμπιά σε έναν κοινό handler
+
+            // Αν δεν υπάρχει στο bin/Debug, γύρνα στον φάκελο του project
+            if (!File.Exists(_dbPath))
+            {
+                _dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Tourist_Guide.db");
+                _dbPath = Path.GetFullPath(_dbPath);
+            }
+
+            _connStr = $"Data Source={_dbPath};Version=3;";
+
+            // Συνδέουμε τα κουμπιά με handler
             WireButtons();
         }
 
         private void WireButtons()
         {
-            // Συνδέουμε όλα τα κουμπιά στον ίδιο handler
             btn01.Click += OnPointClick;
             btn02.Click += OnPointClick;
             btn03.Click += OnPointClick;
@@ -31,7 +42,7 @@ namespace TouristGuide.WinForms
             btn05.Click += OnPointClick;
             btn06.Click += OnPointClick;
 
-            // Ορίζουμε τα Tag με τα ονόματα των points (Section_id = 2)
+            // Ονόματα points (Item_name στον πίνακα Items)
             btn01.Tag = "Machu Picchu";
             btn02.Tag = "Cusco";
             btn03.Tag = "Lake Titicaca";
@@ -40,45 +51,36 @@ namespace TouristGuide.WinForms
             btn06.Tag = "Sacred Valley";
         }
 
-
         private void OnPointClick(object sender, EventArgs e)
         {
+            if (Session.IsVisitor)
+            {
+                MessageBox.Show("Οι επισκέπτες δεν αποθηκεύουν ιστορικό.");
+                return;
+            }
+
             var btn = sender as Button;
             if (btn == null) return;
+
             string pointName = btn.Tag as string ?? btn.Text;
 
-            int? itemId = GetItemId(pointName, 2); // Section_id = 2
-
-            if (itemId != null)
+            try
             {
-                SaveHistory(Session.UserId, itemId.Value);
-
-                // ---- DEBUG HISTORY ----
-                using (var conn = new SQLiteConnection(_connStr))
-                using (var cmd = new SQLiteCommand(
-                    "SELECT uh.History_id, i.Item_name, uh.Visited_at " +
-                    "FROM UserHistory uh JOIN Items i ON uh.Item_id=i.Item_id " +
-                    "WHERE uh.User_id=@u ORDER BY uh.Visited_at DESC", conn))
+                int? itemId = GetItemId(pointName, 2); // Section_id = 2
+                if (itemId == null)
                 {
-                    conn.Open();
-                    cmd.Parameters.AddWithValue("@u", Session.UserId);
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        string msg = "Current UserHistory:\n";
-                        while (reader.Read())
-                        {
-                            msg += $"#{reader["History_id"]} - {reader["Item_name"]} at {reader["Visited_at"]}\n";
-                        }
-                        MessageBox.Show(msg);
-                    }
+                    MessageBox.Show($"Δεν βρέθηκε Item στη βάση με όνομα {pointName}");
+                    return;
                 }
-                // ------------------------
 
-                MessageBox.Show($"Visit saved: {pointName}");
+                SaveHistory(Session.UserId, itemId.Value);
+                MessageBox.Show($"Καταγράφηκε επίσκεψη: {pointName}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Σφάλμα: " + ex.Message);
             }
         }
-
-
 
         private int? GetItemId(string name, int sectionId)
         {
@@ -107,14 +109,16 @@ namespace TouristGuide.WinForms
                 cmd.Parameters.AddWithValue("@i", itemId);
                 cmd.ExecuteNonQuery();
             }
+
+            // Debug για να βεβαιωθούμε ότι δείχνει στο σωστό αρχείο
+            MessageBox.Show("DB Path: " + _dbPath);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void back_Click(object sender, EventArgs e)
         {
-            
-            this.Hide();         // κρύβεις την τρέχουσα
+            this.Hide();
             var previous = new MainForm();
-            previous.Show();     
+            previous.Show();
         }
     }
 }

@@ -1,16 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace TouristGuide.WinForms
 {
+    // Σταθερές για όλη την εφαρμογή
+    public static class AppConfig
+    {
+        public static readonly string DbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tourist_Guide.db");
+        public static readonly string ConnStr = $"Data Source={DbPath};Version=3;";
+    }
+
     public partial class LoginForm : BaseForm
     {
         public LoginForm()
@@ -20,42 +21,45 @@ namespace TouristGuide.WinForms
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            // Προαιρετικό debug
+            // MessageBox.Show($"DB exists: {File.Exists(AppConfig.DbPath)}\nPath: {AppConfig.DbPath}");
         }
 
         private void button_user_Click(object sender, EventArgs e)
         {
             string username = textBox_username.Text.Trim();
             string password = textBox_password.Text.Trim();
-            string connectionString = @"Data Source=Tourist_Guide.db;Version=3;";
 
-            using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            if (!File.Exists(AppConfig.DbPath))
+            {
+                MessageBox.Show($"Η βάση δεν βρέθηκε: {AppConfig.DbPath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (var conn = new SQLiteConnection(AppConfig.ConnStr))
             {
                 conn.Open();
 
-                string query = "SELECT COUNT(1) FROM Users WHERE Username=@username AND Password=@password";
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                // Έλεγχος ύπαρξης χρήστη
+                string query = "SELECT User_id FROM Users WHERE Username=@username AND Password=@password LIMIT 1";
+                using (var cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
 
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    if (count == 1)
+                    object result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
                     {
-                        // Βρες και το UserId
-                        string idQuery = "SELECT User_id FROM Users WHERE Username=@username";
-                        using (SQLiteCommand idCmd = new SQLiteCommand(idQuery, conn))
-                        {
-                            idCmd.Parameters.AddWithValue("@username", username);
-                            int userId = Convert.ToInt32(idCmd.ExecuteScalar());
+                        int userId = Convert.ToInt32(result);
 
-                            Session.IsVisitor = false;
-                            Session.UserId = userId;
-                            Session.Username = username;
-                        }
+                        // Αποθήκευση στο Session
+                        Session.IsVisitor = false;
+                        Session.UserId = userId;
+                        Session.Username = username;
 
                         MessageBox.Show("Login successful!");
+
+                        // Άνοιγμα MainForm
                         MainForm main = new MainForm();
                         main.Show();
                         this.Hide();
@@ -83,7 +87,7 @@ namespace TouristGuide.WinForms
 
         private void textBox_username_TextChanged(object sender, EventArgs e)
         {
-
+            // Δεν χρειάζεται για το ιστορικό
         }
     }
 }

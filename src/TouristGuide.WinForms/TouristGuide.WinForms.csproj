@@ -66,10 +66,14 @@
     <Compile Include="BeachesForm.Designer.cs">
       <DependentUpon>BeachesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="HistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs" />
+    <Compile Include="LoginForm.cs" />
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BeachesForm.resx">
       <DependentUpon>BeachesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

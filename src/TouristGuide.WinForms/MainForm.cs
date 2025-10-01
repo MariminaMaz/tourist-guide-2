@@ -48,14 +48,9 @@ namespace TouristGuide.WinForms
 
         private void button_History_Click(object sender, EventArgs e)
         {
-            if (Session.IsVisitor)
-            {
-                MessageBox.Show("Οι επισκέπτες δεν έχουν ιστορικό!");
-            }
-            else
-            {
-                MessageBox.Show("Τελευταία παραλία που είδατε: Ναυάγιο");
-            }
+            var historyForm = new HistoryForm();
+            historyForm.Show();
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)

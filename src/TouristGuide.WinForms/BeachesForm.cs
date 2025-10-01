@@ -14,16 +14,16 @@ namespace TouristGuide.WinForms
         {
             InitializeComponent();
 
-            _dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tourist_Guide.db");
+            // Path προς την βάση στο project folder
+            _dbPath = Path.Combine(Application.StartupPath, @"..\..\Tourist_Guide.db");
+            _dbPath = Path.GetFullPath(_dbPath);
             _connStr = $"Data Source={_dbPath};Version=3;";
 
-            // Συνδέουμε όλα τα κουμπιά σε έναν κοινό handler
             WireButtons();
         }
 
         private void WireButtons()
         {
-            // Προσαρμόζεις ανάλογα τα ονόματα από το Designer
             button1.Click += OnBeachClick;
             button2.Click += OnBeachClick;
             button3.Click += OnBeachClick;
@@ -31,13 +31,12 @@ namespace TouristGuide.WinForms
             button5.Click += OnBeachClick;
             button6.Click += OnBeachClick;
 
-            // Βάλε εδώ στο Tag το όνομα του Item_name από τον πίνακα Items
             button1.Tag = "Máncora Beach";
             button2.Tag = "Los Órganos Beach";
             button3.Tag = "Punta Sal Beach";
             button4.Tag = "Playa Roja";
             button5.Tag = "Las Pocitas";
-            button6.Tag = "Belluga"; 
+            button6.Tag = "Belluga";
         }
 
         private void OnBeachClick(object sender, EventArgs e)
@@ -63,7 +62,7 @@ namespace TouristGuide.WinForms
                 }
 
                 SaveHistory(Session.UserId, itemId.Value);
-                MessageBox.Show($"Καταγράφηκε επίσκεψη: {beachName}");
+                MessageBox.Show($"Καταγράφηκε επίσκεψη: {beachName}\nDB Path: {_dbPath}");
             }
             catch (Exception ex)
             {
@@ -99,14 +98,14 @@ namespace TouristGuide.WinForms
 
         private void back_Click(object sender, EventArgs e)
         {
-            this.Hide();         // κρύβεις την τρέχουσα
+            this.Hide();
             var previous = new MainForm();
-            previous.Show();    
+            previous.Show();
         }
 
         private void BeachesForm_Load(object sender, EventArgs e)
         {
-
+            // Μπορείς να προσθέσεις φόρτωση αρχικής κατάστασης αν χρειάζεται
         }
     }
 }
