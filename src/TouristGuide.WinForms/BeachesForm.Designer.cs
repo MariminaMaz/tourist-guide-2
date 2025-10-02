@@ -190,7 +190,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(199, 159);
             this.button10.TabIndex = 1;
-            this.button10.Text = "button2";
+            this.button10.Text = "Los Órganos Beach";
             this.button10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.OnBeachClick);

@@ -148,25 +148,36 @@ namespace TouristGuide.WinForms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (pictureBox1.Visible== true)
+            if (pictureBox1.Visible)
             {   
                 pictureBox1.Visible = false;
                 pictureBox2.Visible = true;
+                pictureBox2.BringToFront();
 
             }
-            else if (pictureBox2.Visible == true)
+            else if (pictureBox2.Visible )
             {  pictureBox2.Visible = false;
                pictureBox3.Visible = true;
+                pictureBox3.BringToFront();
             }
-            else if (pictureBox3.Visible == true)
+            else if (pictureBox3.Visible )
             {
                 pictureBox3.Visible = false;
                 pictureBox4.Visible = true;
+                pictureBox4.BringToFront();
             }
-            else if (pictureBox4.Visible ==true)
+            else if (pictureBox4.Visible)
             {
                 pictureBox4.Visible = false;
                 pictureBox5.Visible = true;
+                pictureBox5.BringToFront();
+
+            }
+            else if (pictureBox5.Visible)
+            {
+                pictureBox5.Visible = false;
+                pictureBox1.Visible = true;
+                pictureBox1.BringToFront();
             }
         }
 

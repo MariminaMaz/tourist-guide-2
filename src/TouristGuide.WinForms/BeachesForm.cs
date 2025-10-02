@@ -25,14 +25,14 @@ namespace TouristGuide.WinForms
         private void WireButtons()
         {
             button1.Click += OnBeachClick;
-            button2.Click += OnBeachClick;
+            button10.Click += OnBeachClick;
             button3.Click += OnBeachClick;
             button4.Click += OnBeachClick;
             button5.Click += OnBeachClick;
             button6.Click += OnBeachClick;
 
             button1.Tag = "Máncora Beach";
-            button2.Tag = "Los Órganos Beach";
+            button10.Tag = "Los Órganos Beach";
             button3.Tag = "Punta Sal Beach";
             button4.Tag = "Playa Roja";
             button5.Tag = "Las Pocitas";
