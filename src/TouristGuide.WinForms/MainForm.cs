@@ -14,10 +14,7 @@ namespace TouristGuide.WinForms
 {
     public partial class MainForm : BaseForm
     {
-        private Label lblWelcome;
-        private Button btnBeaches;
-        private Button btnAttractions;
-        private Button btnRestaurants;
+       
 
         private SpeechSynthesizer tts = new SpeechSynthesizer();
 

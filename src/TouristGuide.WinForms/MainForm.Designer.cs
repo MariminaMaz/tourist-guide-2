@@ -61,7 +61,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(262, 106);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "Καλώς ήρθατε στον τουριστικό οδηγό για το Περού παρακάτω θα βρείτε περισσοτέρες π" +
-    "ληρο\nφορίες.";
+    "ληροφορίες.";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // button_History
