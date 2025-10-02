@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace TouristGuide.WinForms
@@ -72,5 +73,43 @@ namespace TouristGuide.WinForms
         {
             this.Close();
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            string line = null;
+            if (listBox1.SelectedItem != null)
+                line = listBox1.SelectedItem.ToString();
+            else if (listBox2.SelectedItem != null)
+                line = listBox2.SelectedItem.ToString();
+
+            // Έλεγχοι
+            if (string.IsNullOrWhiteSpace(line) || line.StartsWith("("))
+            {
+                MessageBox.Show("Διάλεξε μια καταχώρηση από τη λίστα.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (var sfd = new SaveFileDialog())
+            {
+                sfd.Title = "Αποθήκευση πληροφοριών";
+                sfd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                sfd.FileName = "tourist-info.txt"; // απλό default όνομα
+
+                if (sfd.ShowDialog(this) == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Αποθήκευση ως UTF-8 
+                        File.WriteAllText(sfd.FileName, line, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+                        MessageBox.Show("Αποθηκεύτηκε επιτυχώς.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Αποτυχία αποθήκευσης:\r\n" + ex.Message, "Export", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
-}
+    }
+

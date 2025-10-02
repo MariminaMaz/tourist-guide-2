@@ -24,6 +24,8 @@
             this.αποθήκευσηToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpInstructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -32,7 +34,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.αρχείοToolStripMenuItem,
             this.aboutToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -53,7 +56,7 @@
             this.εκκαθάρισηToolStripMenuItem,
             this.αποθήκευσηToolStripMenuItem});
             this.ιστορικόToolStripMenuItem.Name = "ιστορικόToolStripMenuItem";
-            this.ιστορικόToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.ιστορικόToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ιστορικόToolStripMenuItem.Text = "Ιστορικό ";
             // 
             // εκκαθάρισηToolStripMenuItem
@@ -82,6 +85,21 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpInstructionsToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // helpInstructionsToolStripMenuItem
+            // 
+            this.helpInstructionsToolStripMenuItem.Name = "helpInstructionsToolStripMenuItem";
+            this.helpInstructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.helpInstructionsToolStripMenuItem.Text = "Οδηγίες";
+            this.helpInstructionsToolStripMenuItem.Click += new System.EventHandler(this.helpInstructionsToolStripMenuItem_Click);
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,6 +126,8 @@
         private System.Windows.Forms.ToolStripMenuItem αποθήκευσηToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpInstructionsToolStripMenuItem;
     }
 }
 

@@ -27,6 +27,18 @@ namespace TouristGuide.WinForms
 
             MessageBox.Show(aboutText, "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void helpInstructionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string helpText =
+                "Οδηγίες Χρήσης:\n\n" +
+                  "1. Από το κεντρικό μενού επιλέξτε κατηγορία (Παραλίες, Αξιοθέατα).\n" +
+                  "2. Με το κουμπί 'Ανάγνωση' μπορείτε να ακούσετε το κείμενο (Text-To-Speech).\n" +
+                  "3. Αν είστε εγγεγραμμένος χρήστης, μπορείτε να δείτε το Ιστορικό.\n";
+
+            MessageBox.Show(helpText, "Βοήθεια", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }
 
