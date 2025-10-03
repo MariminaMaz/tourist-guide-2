@@ -17,9 +17,7 @@ namespace TouristGuide.WinForms
 
         private void HistoryForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Load event εκτελέστηκε!");
-
-            MessageBox.Show($"DEBUG: Session.UserId = {Session.UserId}");
+            
             if (Session.UserId <= 0 || Session.IsVisitor)
             {
                 MessageBox.Show("Οι επισκέπτες δεν έχουν ιστορικό.");

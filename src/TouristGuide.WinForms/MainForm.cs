@@ -62,7 +62,19 @@ namespace TouristGuide.WinForms
         private void Button_MouseLeave(object sender, EventArgs e)
         {
             if (sender is Button btn)
-                btn.BackColor = SystemColors.Control; 
+            {
+                
+                if (btn == button_attractions || btn == button_beaches)
+                {
+                    btn.BackColor = Color.FromArgb(128, 255, 255);
+
+                }
+                else
+                {
+                    btn.BackColor = SystemColors.Control;
+                    btn.ForeColor = SystemColors.ControlText;
+                }
+            }
         } 
 
         private void MainForm_Load(object sender, EventArgs e)

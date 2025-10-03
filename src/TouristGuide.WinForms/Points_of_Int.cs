@@ -55,7 +55,7 @@ namespace TouristGuide.WinForms
         {
             if (Session.IsVisitor)
             {
-                MessageBox.Show("Οι επισκέπτες δεν αποθηκεύουν ιστορικό.");
+                
                 return;
             }
 
@@ -63,23 +63,9 @@ namespace TouristGuide.WinForms
             if (btn == null) return;
 
             string pointName = btn.Tag as string ?? btn.Text;
-
-            try
-            {
-                int? itemId = GetItemId(pointName, 2); 
-                if (itemId == null)
-                {
-                    MessageBox.Show($"Δεν βρέθηκε Item στη βάση με όνομα {pointName}");
-                    return;
-                }
-
-                SaveHistory(Session.UserId, itemId.Value);
-                MessageBox.Show($"Καταγράφηκε επίσκεψη: {pointName}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Σφάλμα: " + ex.Message);
-            }
+            int? itemId = GetItemId(pointName, 2);
+            SaveHistory(Session.UserId, itemId.Value);
+           
         }
 
         private int? GetItemId(string name, int sectionId)

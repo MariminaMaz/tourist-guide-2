@@ -43,8 +43,8 @@ namespace TouristGuide.WinForms
         {
             if (Session.IsVisitor)
             {
-                MessageBox.Show("Οι επισκέπτες δεν αποθηκεύουν ιστορικό.");
-                return;
+               
+               return;
             }
 
             var btn = sender as Button;
@@ -52,22 +52,9 @@ namespace TouristGuide.WinForms
 
             string beachName = btn.Tag as string ?? btn.Text;
 
-            try
-            {
-                int? itemId = GetItemId(beachName);
-                if (itemId == null)
-                {
-                    MessageBox.Show($"Δεν βρέθηκε Item στη βάση με όνομα {beachName}");
-                    return;
-                }
-
-                SaveHistory(Session.UserId, itemId.Value);
-                MessageBox.Show($"Καταγράφηκε επίσκεψη: {beachName}\nDB Path: {_dbPath}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Σφάλμα: " + ex.Message);
-            }
+            int? itemId = GetItemId(beachName);
+            SaveHistory(Session.UserId, itemId.Value);
+            
         }
 
         private int? GetItemId(string name)
