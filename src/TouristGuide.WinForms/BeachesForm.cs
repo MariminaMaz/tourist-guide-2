@@ -105,7 +105,7 @@ namespace TouristGuide.WinForms
 
         private void BeachesForm_Load(object sender, EventArgs e)
         {
-            // Μπορείς να προσθέσεις φόρτωση αρχικής κατάστασης αν χρειάζεται
+            
         }
     }
 }

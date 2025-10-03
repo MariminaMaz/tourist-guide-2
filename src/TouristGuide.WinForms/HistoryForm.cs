@@ -11,7 +11,7 @@ namespace TouristGuide.WinForms
         public HistoryForm()
         {
             InitializeComponent();
-            this.Load += HistoryForm_Load; // Σύνδεση του Load event
+            this.Load += HistoryForm_Load; 
         }
 
 
@@ -82,7 +82,7 @@ namespace TouristGuide.WinForms
             else if (listBox2.SelectedItem != null)
                 line = listBox2.SelectedItem.ToString();
 
-            // Έλεγχοι
+            
             if (string.IsNullOrWhiteSpace(line) || line.StartsWith("("))
             {
                 MessageBox.Show("Διάλεξε μια καταχώρηση από τη λίστα.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -93,13 +93,13 @@ namespace TouristGuide.WinForms
             {
                 sfd.Title = "Αποθήκευση πληροφοριών";
                 sfd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-                sfd.FileName = "tourist-info.txt"; // απλό default όνομα
+                sfd.FileName = "tourist-info.txt"; 
 
                 if (sfd.ShowDialog(this) == DialogResult.OK)
                 {
                     try
                     {
-                        // Αποθήκευση ως UTF-8 
+                        
                         File.WriteAllText(sfd.FileName, line, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
                         MessageBox.Show("Αποθηκεύτηκε επιτυχώς.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

@@ -29,7 +29,7 @@ namespace TouristGuide.WinForms
 
             _connStr = $"Data Source={_dbPath};Version=3;";
 
-            // Συνδέουμε τα κουμπιά με handler
+            
             WireButtons();
         }
 
@@ -66,7 +66,7 @@ namespace TouristGuide.WinForms
 
             try
             {
-                int? itemId = GetItemId(pointName, 2); // Section_id = 2
+                int? itemId = GetItemId(pointName, 2); 
                 if (itemId == null)
                 {
                     MessageBox.Show($"Δεν βρέθηκε Item στη βάση με όνομα {pointName}");

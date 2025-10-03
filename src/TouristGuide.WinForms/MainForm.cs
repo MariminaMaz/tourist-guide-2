@@ -56,25 +56,25 @@ namespace TouristGuide.WinForms
         private void Button_MouseEnter(object sender, EventArgs e)
         {
             if (sender is Button btn)
-                btn.BackColor = Color.LightBlue;  // χρώμα όταν περνάει το ποντίκι
+                btn.BackColor = Color.LightBlue;  
         }
 
         private void Button_MouseLeave(object sender, EventArgs e)
         {
             if (sender is Button btn)
-                btn.BackColor = SystemColors.Control; // επαναφορά default
+                btn.BackColor = SystemColors.Control; 
         } 
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (Session.IsVisitor)
             {
-                // Κρύβει το κουμπί Ιστορικό για Visitor
+                
                 button_History.Visible = false;
             }
             else
             {
-                // Ο User βλέπει το κουμπί Ιστορικό
+                
                 button_History.Visible = true;
 
                 tts.Volume = 100;
@@ -99,14 +99,14 @@ namespace TouristGuide.WinForms
             pictureBox4.Visible = false;
             pictureBox5.Visible = false;
 
-            // Να καλύπτουν όλο το χώρο & να κάνουν Zoom
+            
             pictureBox1.Dock = pictureBox2.Dock = pictureBox3.Dock = pictureBox4.Dock = pictureBox5.Dock = DockStyle.Fill;
             pictureBox1.SizeMode = pictureBox2.SizeMode = pictureBox3.SizeMode = pictureBox4.SizeMode = pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
 
             // Timer
             timer1.Stop();
-            timer1.Interval = 2000;        // κάθε 2 δευτερόλεπτα
-            timer1.Tick -= timer1_Tick;    // αποφυγή διπλού binding
+            timer1.Interval = 2000;        
+            timer1.Tick -= timer1_Tick;   
             timer1.Tick += timer1_Tick;
             timer1.Start();
 

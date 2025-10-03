@@ -59,7 +59,7 @@ namespace TouristGuide.WinForms
 
                         MessageBox.Show("Login successful!");
 
-                        // Άνοιγμα MainForm
+                        
                         MainForm main = new MainForm();
                         main.Show();
                         this.Hide();
@@ -87,7 +87,7 @@ namespace TouristGuide.WinForms
 
         private void textBox_username_TextChanged(object sender, EventArgs e)
         {
-            // Δεν χρειάζεται για το ιστορικό
+           
         }
     }
 }
