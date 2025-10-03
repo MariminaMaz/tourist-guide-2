@@ -55,7 +55,6 @@ namespace TouristGuide.WinForms
         {
             if (Session.IsVisitor)
             {
-                MessageBox.Show("Οι επισκέπτες δεν αποθηκεύουν ιστορικό.");
                 return;
             }
 
@@ -110,10 +109,7 @@ namespace TouristGuide.WinForms
                 cmd.ExecuteNonQuery();
             }
 
-            // Debug για να βεβαιωθούμε ότι δείχνει στο σωστό αρχείο
-            MessageBox.Show("DB Path: " + _dbPath);
         }
-
         private void back_Click(object sender, EventArgs e)
         {
             this.Hide();

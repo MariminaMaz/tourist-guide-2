@@ -24,14 +24,14 @@ namespace TouristGuide.WinForms
 
         private void WireButtons()
         {
-            button1.Click += OnBeachClick;
+            button9.Click += OnBeachClick;
             button10.Click += OnBeachClick;
             button3.Click += OnBeachClick;
             button4.Click += OnBeachClick;
             button5.Click += OnBeachClick;
             button6.Click += OnBeachClick;
 
-            button1.Tag = "Máncora Beach";
+            button9.Tag = "Máncora Beach";
             button10.Tag = "Los Órganos Beach";
             button3.Tag = "Punta Sal Beach";
             button4.Tag = "Playa Roja";
@@ -43,7 +43,6 @@ namespace TouristGuide.WinForms
         {
             if (Session.IsVisitor)
             {
-                MessageBox.Show("Οι επισκέπτες δεν αποθηκεύουν ιστορικό.");
                 return;
             }
 
@@ -62,7 +61,7 @@ namespace TouristGuide.WinForms
                 }
 
                 SaveHistory(Session.UserId, itemId.Value);
-                MessageBox.Show($"Καταγράφηκε επίσκεψη: {beachName}\nDB Path: {_dbPath}");
+                MessageBox.Show($"Καταγράφηκε επίσκεψη: {beachName}");
             }
             catch (Exception ex)
             {
