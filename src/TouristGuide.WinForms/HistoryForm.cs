@@ -13,23 +13,15 @@ namespace TouristGuide.WinForms
             InitializeComponent();
             this.Load += HistoryForm_Load; 
         }
-
-
         private void HistoryForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Load event εκτελέστηκε!");
-
-            MessageBox.Show($"DEBUG: Session.UserId = {Session.UserId}");
             if (Session.UserId <= 0 || Session.IsVisitor)
             {
-                MessageBox.Show("Οι επισκέπτες δεν έχουν ιστορικό.");
                 return;
             }
-
             LoadHistorySection(listBox1, 1); // Παραλίες
             LoadHistorySection(listBox2, 2); // Αξιοθέατα
         }
-
         private void LoadHistorySection(ListBox listBox, int sectionId)
         {
             listBox.Items.Clear();
@@ -43,8 +35,7 @@ namespace TouristGuide.WinForms
                     FROM UserHistory H
                     JOIN Items I ON H.Item_id = I.Item_id
                     WHERE H.User_id=@UserId AND I.Section_id=@SectionId
-                    ORDER BY H.Visited_at DESC
-                    LIMIT 5;";
+                    ORDER BY H.Visited_at DESC;";
 
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
@@ -61,7 +52,6 @@ namespace TouristGuide.WinForms
                             string visitedAt = reader["Visited_at"].ToString();
                             listBox.Items.Add($"{itemName}  ({visitedAt})");
                         }
-
                         if (count == 0)
                             listBox.Items.Add("(Δεν υπάρχει ιστορικό)");
                     }
@@ -82,7 +72,6 @@ namespace TouristGuide.WinForms
             else if (listBox2.SelectedItem != null)
                 line = listBox2.SelectedItem.ToString();
 
-            
             if (string.IsNullOrWhiteSpace(line) || line.StartsWith("("))
             {
                 MessageBox.Show("Διάλεξε μια καταχώρηση από τη λίστα.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -99,7 +88,6 @@ namespace TouristGuide.WinForms
                 {
                     try
                     {
-                        
                         File.WriteAllText(sfd.FileName, line, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
                         MessageBox.Show("Αποθηκεύτηκε επιτυχώς.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -111,5 +99,4 @@ namespace TouristGuide.WinForms
             }
         }
     }
-    }
-
+}

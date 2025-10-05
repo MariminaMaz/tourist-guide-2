@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.login_panel = new System.Windows.Forms.Panel();
+            this.BackColor = System.Drawing.Color.White;
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.button_visitor = new System.Windows.Forms.Button();
             this.button_user = new System.Windows.Forms.Button();

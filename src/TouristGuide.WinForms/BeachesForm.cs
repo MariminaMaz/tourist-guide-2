@@ -9,19 +9,14 @@ namespace TouristGuide.WinForms
     {
         private readonly string _dbPath;
         private readonly string _connStr;
-
         public BeachesForm()
         {
             InitializeComponent();
-
-            // Path προς την βάση στο project folder
-            _dbPath = Path.Combine(Application.StartupPath, @"..\..\Tourist_Guide.db");
+            _dbPath = Path.Combine(Application.StartupPath, @"..\..\Tourist_Guide.db");    // Path προς την βάση 
             _dbPath = Path.GetFullPath(_dbPath);
             _connStr = $"Data Source={_dbPath};Version=3;";
-
             WireButtons();
         }
-
         private void WireButtons()
         {
             button9.Click += OnBeachClick;
@@ -38,7 +33,6 @@ namespace TouristGuide.WinForms
             button5.Tag = "Las Pocitas";
             button6.Tag = "Belluga";
         }
-
         private void OnBeachClick(object sender, EventArgs e)
         {
             if (Session.IsVisitor)
@@ -50,39 +44,32 @@ namespace TouristGuide.WinForms
             if (btn == null) return;
 
             string beachName = btn.Tag as string ?? btn.Text;
-
-            try
-            {
-                int? itemId = GetItemId(beachName);
-                if (itemId == null)
-                {
-                    MessageBox.Show($"Δεν βρέθηκε Item στη βάση με όνομα {beachName}");
-                    return;
-                }
-
-                SaveHistory(Session.UserId, itemId.Value);
-                MessageBox.Show($"Καταγράφηκε επίσκεψη: {beachName}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Σφάλμα: " + ex.Message);
-            }
+            var item = GetItem(beachName);
+            SaveHistory(Session.UserId, item.ItemId.Value);
+             // Εμφάνιση περιγραφής
+             MessageBox.Show($"{beachName}\n\n{item.Description}","Πληροφορίες", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        private int? GetItemId(string name)
+        private (int? ItemId, string Description) GetItem(string name)
         {
             using (var conn = new SQLiteConnection(_connStr))
-            using (var cmd = new SQLiteCommand("SELECT Item_id FROM Items WHERE Item_name=@n LIMIT 1", conn))
+            using (var cmd = new SQLiteCommand(
+                "SELECT Item_id, Description FROM Items WHERE Item_name=@n LIMIT 1", conn))
             {
                 conn.Open();
                 cmd.Parameters.AddWithValue("@n", name);
-                object result = cmd.ExecuteScalar();
-                if (result == null || result == DBNull.Value)
-                    return null;
-                return Convert.ToInt32(result);
-            }
-        }
 
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int itemId = reader.GetInt32(0);           // Item_id
+                        string description = reader.GetString(1);  // Description
+                        return (itemId, description);
+                    }
+                }
+            }
+            return (null, null);
+        }
         private void SaveHistory(int userId, int itemId)
         {
             using (var conn = new SQLiteConnection(_connStr))
@@ -94,17 +81,14 @@ namespace TouristGuide.WinForms
                 cmd.ExecuteNonQuery();
             }
         }
-
         private void back_Click(object sender, EventArgs e)
         {
             this.Hide();
             var previous = new MainForm();
             previous.Show();
         }
-
         private void BeachesForm_Load(object sender, EventArgs e)
         {
-            
         }
     }
 }

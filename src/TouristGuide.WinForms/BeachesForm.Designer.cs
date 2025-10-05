@@ -36,10 +36,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.back = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -72,11 +72,11 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.button4.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button4.ForeColor = System.Drawing.Color.Salmon;
+            this.button4.ForeColor = System.Drawing.Color.Tomato;
             this.button4.Image = global::TouristGuide.WinForms.Properties.Resources.paralia6;
-            this.button4.Location = new System.Drawing.Point(571, 245);
+            this.button4.Location = new System.Drawing.Point(571, 240);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(199, 159);
             this.button4.TabIndex = 5;
@@ -89,10 +89,10 @@
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button5.ForeColor = System.Drawing.Color.Salmon;
+            this.button5.ForeColor = System.Drawing.Color.Tomato;
             this.button5.Image = global::TouristGuide.WinForms.Properties.Resources.paralia5;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(297, 245);
+            this.button5.Location = new System.Drawing.Point(297, 240);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(199, 159);
             this.button5.TabIndex = 4;
@@ -105,9 +105,9 @@
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button6.ForeColor = System.Drawing.Color.Salmon;
+            this.button6.ForeColor = System.Drawing.Color.Tomato;
             this.button6.Image = global::TouristGuide.WinForms.Properties.Resources.paralia4;
-            this.button6.Location = new System.Drawing.Point(29, 245);
+            this.button6.Location = new System.Drawing.Point(29, 240);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(199, 159);
             this.button6.TabIndex = 3;
@@ -155,21 +155,11 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.OnBeachClick);
             // 
-            // back
-            // 
-            this.back.Location = new System.Drawing.Point(29, 415);
-            this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(75, 23);
-            this.back.TabIndex = 6;
-            this.back.Text = "Back";
-            this.back.UseVisualStyleBackColor = true;
-            this.back.Click += new System.EventHandler(this.back_Click);
-            // 
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button9.ForeColor = System.Drawing.Color.Salmon;
+            this.button9.ForeColor = System.Drawing.Color.Tomato;
             this.button9.Image = global::TouristGuide.WinForms.Properties.Resources.paralia1;
             this.button9.Location = new System.Drawing.Point(29, 47);
             this.button9.Name = "button9";
@@ -184,7 +174,7 @@
             // 
             this.button10.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button10.ForeColor = System.Drawing.Color.Salmon;
+            this.button10.ForeColor = System.Drawing.Color.Tomato;
             this.button10.Image = global::TouristGuide.WinForms.Properties.Resources.paralia2;
             this.button10.Location = new System.Drawing.Point(297, 47);
             this.button10.Name = "button10";
@@ -201,7 +191,7 @@
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button11.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button11.ForeColor = System.Drawing.Color.Salmon;
+            this.button11.ForeColor = System.Drawing.Color.Tomato;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button11.ImageKey = "(none)";
             this.button11.Location = new System.Drawing.Point(571, 47);
@@ -214,10 +204,23 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.OnBeachClick);
             // 
+            // back
+            // 
+            this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.back.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.back.Location = new System.Drawing.Point(29, 409);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(75, 33);
+            this.back.TabIndex = 6;
+            this.back.Text = "Back";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
             // BeachesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.back);
             this.Controls.Add(this.button4);
@@ -261,9 +264,9 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button back;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button back;
     }
 }

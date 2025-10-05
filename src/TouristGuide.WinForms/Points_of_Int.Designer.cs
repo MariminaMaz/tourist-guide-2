@@ -33,19 +33,17 @@
             this.btn05 = new System.Windows.Forms.Button();
             this.btn04 = new System.Windows.Forms.Button();
             this.btn02 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btn01 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn03
             // 
             this.btn03.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.point04;
             this.btn03.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn03.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.btn03.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btn03.ForeColor = System.Drawing.Color.Orange;
             this.btn03.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn03.ImageKey = "(none)";
             this.btn03.Location = new System.Drawing.Point(572, 47);
@@ -62,11 +60,11 @@
             // 
             this.btn06.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.point09;
             this.btn06.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn06.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.btn06.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn06.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btn06.ForeColor = System.Drawing.Color.Orange;
             this.btn06.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btn06.Location = new System.Drawing.Point(572, 245);
+            this.btn06.Location = new System.Drawing.Point(572, 240);
             this.btn06.Name = "btn06";
             this.btn06.Size = new System.Drawing.Size(199, 159);
             this.btn06.TabIndex = 13;
@@ -79,10 +77,10 @@
             // 
             this.btn05.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.peru_backgr;
             this.btn05.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn05.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.btn05.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn05.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btn05.Location = new System.Drawing.Point(298, 245);
+            this.btn05.ForeColor = System.Drawing.Color.Orange;
+            this.btn05.Location = new System.Drawing.Point(298, 240);
             this.btn05.Name = "btn05";
             this.btn05.Size = new System.Drawing.Size(199, 159);
             this.btn05.TabIndex = 12;
@@ -95,10 +93,10 @@
             // 
             this.btn04.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.point08;
             this.btn04.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn04.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.btn04.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btn04.Location = new System.Drawing.Point(30, 245);
+            this.btn04.ForeColor = System.Drawing.Color.Orange;
+            this.btn04.Location = new System.Drawing.Point(30, 240);
             this.btn04.Name = "btn04";
             this.btn04.Size = new System.Drawing.Size(199, 159);
             this.btn04.TabIndex = 11;
@@ -111,9 +109,9 @@
             // 
             this.btn02.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.point05;
             this.btn02.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn02.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.btn02.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btn02.ForeColor = System.Drawing.Color.Orange;
             this.btn02.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn02.Location = new System.Drawing.Point(298, 47);
             this.btn02.Name = "btn02";
@@ -124,25 +122,13 @@
             this.btn02.UseVisualStyleBackColor = true;
             this.btn02.Click += new System.EventHandler(this.OnPointClick);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button2.Image = global::TouristGuide.WinForms.Properties.Resources.paralia2;
-            this.button2.Location = new System.Drawing.Point(298, 47);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(199, 159);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "button2";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // btn01
             // 
             this.btn01.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.point02;
             this.btn01.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn01.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.btn01.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btn01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btn01.ForeColor = System.Drawing.Color.Orange;
             this.btn01.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn01.Location = new System.Drawing.Point(30, 47);
             this.btn01.Name = "btn01";
@@ -153,53 +139,40 @@
             this.btn01.UseVisualStyleBackColor = true;
             this.btn01.Click += new System.EventHandler(this.OnPointClick);
             // 
-            // button1
+            // back
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button1.Image = global::TouristGuide.WinForms.Properties.Resources.paralia1;
-            this.button1.Location = new System.Drawing.Point(30, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 159);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Guanama Bay";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(30, 410);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 28);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.back_Click);
+            this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.back.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.back.Location = new System.Drawing.Point(30, 405);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(75, 33);
+            this.back.TabIndex = 14;
+            this.back.Text = "Back";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click_1);
             // 
             // PointsOfInterestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.btn06);
             this.Controls.Add(this.btn05);
             this.Controls.Add(this.btn04);
             this.Controls.Add(this.btn03);
             this.Controls.Add(this.btn02);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btn01);
-            this.Controls.Add(this.button1);
             this.Name = "PointsOfInterestForm";
             this.Text = "Points_of_Int";
-            this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.btn01, 0);
-            this.Controls.SetChildIndex(this.button2, 0);
             this.Controls.SetChildIndex(this.btn02, 0);
             this.Controls.SetChildIndex(this.btn03, 0);
             this.Controls.SetChildIndex(this.btn04, 0);
             this.Controls.SetChildIndex(this.btn05, 0);
             this.Controls.SetChildIndex(this.btn06, 0);
-            this.Controls.SetChildIndex(this.button3, 0);
+            this.Controls.SetChildIndex(this.back, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,9 +185,7 @@
         private System.Windows.Forms.Button btn04;
         private System.Windows.Forms.Button btn03;
         private System.Windows.Forms.Button btn02;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn01;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button back;
     }
 }

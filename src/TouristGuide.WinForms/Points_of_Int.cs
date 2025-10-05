@@ -13,26 +13,11 @@ namespace TouristGuide.WinForms
         public PointsOfInterestForm()
         {
             InitializeComponent();
-
-            // --- Βρες το σωστό path για τη βάση ---
-            _dbPath = Path.Combine(Application.StartupPath, @"..\..\Tourist_Guide.db");
+            _dbPath = Path.Combine(Application.StartupPath, @"..\..\Tourist_Guide.db");   // Path προς την βάση 
             _dbPath = Path.GetFullPath(_dbPath);
             _connStr = $"Data Source={_dbPath};Version=3;";
-
-
-            // Αν δεν υπάρχει στο bin/Debug, γύρνα στον φάκελο του project
-            if (!File.Exists(_dbPath))
-            {
-                _dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Tourist_Guide.db");
-                _dbPath = Path.GetFullPath(_dbPath);
-            }
-
-            _connStr = $"Data Source={_dbPath};Version=3;";
-
-            
             WireButtons();
         }
-
         private void WireButtons()
         {
             btn01.Click += OnPointClick;
@@ -42,7 +27,6 @@ namespace TouristGuide.WinForms
             btn05.Click += OnPointClick;
             btn06.Click += OnPointClick;
 
-            // Ονόματα points (Item_name στον πίνακα Items)
             btn01.Tag = "Machu Picchu";
             btn02.Tag = "Cusco";
             btn03.Tag = "Lake Titicaca";
@@ -50,53 +34,41 @@ namespace TouristGuide.WinForms
             btn05.Tag = "Colca Canyon";
             btn06.Tag = "Sacred Valley";
         }
-
         private void OnPointClick(object sender, EventArgs e)
         {
             if (Session.IsVisitor)
             {
                 return;
             }
-
             var btn = sender as Button;
-            if (btn == null) return;
-
             string pointName = btn.Tag as string ?? btn.Text;
-
-            try
-            {
-                int? itemId = GetItemId(pointName, 2); 
-                if (itemId == null)
-                {
-                    MessageBox.Show($"Δεν βρέθηκε Item στη βάση με όνομα {pointName}");
-                    return;
-                }
-
-                SaveHistory(Session.UserId, itemId.Value);
-                MessageBox.Show($"Καταγράφηκε επίσκεψη: {pointName}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Σφάλμα: " + ex.Message);
-            }
+            var item = GetItem(pointName, 2);   
+            SaveHistory(Session.UserId, item.ItemId.Value);
+            // Εμφάνιση περιγραφής
+            MessageBox.Show($"{pointName}\n\n{item.Description}","Πληροφορίες",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
-
-        private int? GetItemId(string name, int sectionId)
+        private (int? ItemId, string Description) GetItem(string name, int sectionId)
         {
             using (var conn = new SQLiteConnection(_connStr))
             using (var cmd = new SQLiteCommand(
-                "SELECT Item_id FROM Items WHERE Item_name=@n AND Section_id=@s LIMIT 1", conn))
+                "SELECT Item_id, Description FROM Items WHERE Item_name=@n AND Section_id=@s LIMIT 1", conn))
             {
                 conn.Open();
                 cmd.Parameters.AddWithValue("@n", name);
                 cmd.Parameters.AddWithValue("@s", sectionId);
-                object result = cmd.ExecuteScalar();
-                if (result == null || result == DBNull.Value)
-                    return null;
-                return Convert.ToInt32(result);
-            }
-        }
 
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int itemId = reader.GetInt32(0);            // Item_id
+                        string description = reader.GetString(1);   // Description
+                        return (itemId, description);
+                    }
+                }
+            }
+            return (null, null);
+        }
         private void SaveHistory(int userId, int itemId)
         {
             using (var conn = new SQLiteConnection(_connStr))
@@ -108,9 +80,14 @@ namespace TouristGuide.WinForms
                 cmd.Parameters.AddWithValue("@i", itemId);
                 cmd.ExecuteNonQuery();
             }
-
         }
         private void back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var previous = new MainForm();
+            previous.Show();
+        }
+        private void back_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             var previous = new MainForm();

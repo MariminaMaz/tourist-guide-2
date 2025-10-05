@@ -36,9 +36,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(709, 383);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button2.Location = new System.Drawing.Point(703, 397);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 34);
+            this.button2.Size = new System.Drawing.Size(71, 41);
             this.button2.TabIndex = 1;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
@@ -46,27 +47,32 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(26, 27);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(26, 40);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(649, 212);
+            this.listBox1.Size = new System.Drawing.Size(333, 324);
             this.listBox1.TabIndex = 5;
             // 
             // listBox2
             // 
+            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(26, 252);
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(441, 40);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(649, 186);
+            this.listBox2.Size = new System.Drawing.Size(333, 324);
             this.listBox2.TabIndex = 6;
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(699, 228);
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnExport.Location = new System.Drawing.Point(364, 314);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(89, 23);
+            this.btnExport.Size = new System.Drawing.Size(71, 55);
             this.btnExport.TabIndex = 7;
-            this.btnExport.Text = "Export σε .txt";
+            this.btnExport.Text = "Download";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
@@ -74,6 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.listBox2);
