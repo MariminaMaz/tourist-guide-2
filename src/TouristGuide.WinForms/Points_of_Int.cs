@@ -81,12 +81,6 @@ namespace TouristGuide.WinForms
                 cmd.ExecuteNonQuery();
             }
         }
-        private void back_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var previous = new MainForm();
-            previous.Show();
-        }
         private void back_Click_1(object sender, EventArgs e)
         {
             this.Hide();
