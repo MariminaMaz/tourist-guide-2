@@ -58,12 +58,10 @@ namespace TouristGuide.WinForms
                 }
             }
         }
-
         private void button_Back_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnExport_Click(object sender, EventArgs e)
         {
             string line = null;
@@ -90,6 +88,52 @@ namespace TouristGuide.WinForms
                     {
                         File.WriteAllText(sfd.FileName, line, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
                         MessageBox.Show("Αποθηκεύτηκε επιτυχώς.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Αποτυχία αποθήκευσης:\r\n" + ex.Message, "Export", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        private void btnallExport_Click_1(object sender, EventArgs e)
+        {
+            // Συγκέντρωση όλων των στοιχείων από τις λίστες
+            var sb = new StringBuilder();
+
+            sb.AppendLine("=== Παραλίες ===");
+            foreach (var item in listBox1.Items)
+            {
+                if (item != null && !item.ToString().StartsWith("("))
+                    sb.AppendLine(item.ToString());
+            }
+
+            sb.AppendLine();
+            sb.AppendLine("=== Αξιοθέατα ===");
+            foreach (var item in listBox2.Items)
+            {
+                if (item != null && !item.ToString().StartsWith("("))
+                    sb.AppendLine(item.ToString());
+            }
+
+            if (sb.Length == 0)
+            {
+                MessageBox.Show("Δεν υπάρχουν καταχωρήσεις για εξαγωγή.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (var sfd = new SaveFileDialog())
+            {
+                sfd.Title = "Αποθήκευση ιστορικού";
+                sfd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                sfd.FileName = "history.txt";
+
+                if (sfd.ShowDialog(this) == DialogResult.OK)
+                {
+                    try
+                    {
+                        File.WriteAllText(sfd.FileName, sb.ToString(), new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+                        MessageBox.Show("Το ιστορικό αποθηκεύτηκε επιτυχώς.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
