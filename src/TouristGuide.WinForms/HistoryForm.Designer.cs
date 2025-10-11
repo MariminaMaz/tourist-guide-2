@@ -33,6 +33,7 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnallExport = new System.Windows.Forms.Button();
+            this.clear_history = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -90,12 +91,24 @@
             this.btnallExport.UseVisualStyleBackColor = true;
             this.btnallExport.Click += new System.EventHandler(this.btnallExport_Click_1);
             // 
+            // clear_history
+            // 
+            this.clear_history.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.clear_history.Location = new System.Drawing.Point(362, 181);
+            this.clear_history.Name = "clear_history";
+            this.clear_history.Size = new System.Drawing.Size(80, 58);
+            this.clear_history.TabIndex = 9;
+            this.clear_history.Text = "Clear History";
+            this.clear_history.UseVisualStyleBackColor = true;
+            this.clear_history.Click += new System.EventHandler(this.clear_history_Click);
+            // 
             // HistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.clear_history);
             this.Controls.Add(this.btnallExport);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.listBox2);
@@ -108,6 +121,7 @@
             this.Controls.SetChildIndex(this.listBox2, 0);
             this.Controls.SetChildIndex(this.btnExport, 0);
             this.Controls.SetChildIndex(this.btnallExport, 0);
+            this.Controls.SetChildIndex(this.clear_history, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +133,6 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnallExport;
+        private System.Windows.Forms.Button clear_history;
     }
 }

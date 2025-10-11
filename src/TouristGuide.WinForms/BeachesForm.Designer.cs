@@ -40,6 +40,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
@@ -76,7 +77,7 @@
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button4.ForeColor = System.Drawing.Color.Tomato;
             this.button4.Image = global::TouristGuide.WinForms.Properties.Resources.paralia6;
-            this.button4.Location = new System.Drawing.Point(571, 240);
+            this.button4.Location = new System.Drawing.Point(571, 228);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(199, 159);
             this.button4.TabIndex = 5;
@@ -92,7 +93,7 @@
             this.button5.ForeColor = System.Drawing.Color.Tomato;
             this.button5.Image = global::TouristGuide.WinForms.Properties.Resources.paralia5;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(297, 240);
+            this.button5.Location = new System.Drawing.Point(297, 228);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(199, 159);
             this.button5.TabIndex = 4;
@@ -107,7 +108,7 @@
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button6.ForeColor = System.Drawing.Color.Tomato;
             this.button6.Image = global::TouristGuide.WinForms.Properties.Resources.paralia4;
-            this.button6.Location = new System.Drawing.Point(29, 240);
+            this.button6.Location = new System.Drawing.Point(29, 228);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(199, 159);
             this.button6.TabIndex = 3;
@@ -165,7 +166,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(199, 159);
             this.button9.TabIndex = 0;
-            this.button9.Text = "Guanama Bay";
+            this.button9.Text = "Máncora Beach";
             this.button9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.OnBeachClick);
@@ -208,13 +209,25 @@
             // 
             this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.back.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.back.Location = new System.Drawing.Point(29, 409);
+            this.back.Location = new System.Drawing.Point(29, 393);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(75, 33);
+            this.back.Size = new System.Drawing.Size(75, 51);
             this.back.TabIndex = 6;
             this.back.Text = "Back";
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightBlue;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.ForeColor = System.Drawing.Color.Tomato;
+            this.label1.Location = new System.Drawing.Point(116, 411);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(637, 28);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Καντέ κλικ σε κάποια παραλία για να δείτε την περιγραφή";
             // 
             // BeachesForm
             // 
@@ -222,6 +235,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.back);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
@@ -249,6 +263,7 @@
             this.Controls.SetChildIndex(this.button5, 0);
             this.Controls.SetChildIndex(this.button4, 0);
             this.Controls.SetChildIndex(this.back, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +283,6 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button back;
+        private System.Windows.Forms.Label label1;
     }
 }

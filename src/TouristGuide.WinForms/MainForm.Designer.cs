@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button_History = new System.Windows.Forms.Button();
-            this.button_beaches = new System.Windows.Forms.Button();
-            this.button_attractions = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnPauseResume = new System.Windows.Forms.Button();
@@ -41,9 +38,14 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button_History = new System.Windows.Forms.Button();
+            this.button_beaches = new System.Windows.Forms.Button();
+            this.button_attractions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -57,46 +59,6 @@
             this.richTextBox1.Text = "Καλώς ήρθατε στον τουριστικό οδηγό για το Περού. Παρακάτω θα βρείτε περισσότερες " +
     "πληροφορίες σχετικά με τις παραλίες και τα αξιοθέατα.";
             // 
-            // button_History
-            // 
-            this.button_History.Location = new System.Drawing.Point(332, 351);
-            this.button_History.Name = "button_History";
-            this.button_History.Size = new System.Drawing.Size(67, 60);
-            this.button_History.TabIndex = 5;
-            this.button_History.Text = "Ιστορικό";
-            this.button_History.UseVisualStyleBackColor = true;
-            this.button_History.Click += new System.EventHandler(this.button_History_Click);
-            this.button_History.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.button_History.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
-            // 
-            // button_beaches
-            // 
-            this.button_beaches.BackColor = System.Drawing.Color.White;
-            this.button_beaches.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button_beaches.Location = new System.Drawing.Point(242, 351);
-            this.button_beaches.Name = "button_beaches";
-            this.button_beaches.Size = new System.Drawing.Size(84, 60);
-            this.button_beaches.TabIndex = 6;
-            this.button_beaches.Text = "Παραλίες";
-            this.button_beaches.UseVisualStyleBackColor = false;
-            this.button_beaches.Click += new System.EventHandler(this.button_beaches_Click);
-            this.button_beaches.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.button_beaches.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
-            // 
-            // button_attractions
-            // 
-            this.button_attractions.BackColor = System.Drawing.Color.White;
-            this.button_attractions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button_attractions.Location = new System.Drawing.Point(405, 351);
-            this.button_attractions.Name = "button_attractions";
-            this.button_attractions.Size = new System.Drawing.Size(78, 60);
-            this.button_attractions.TabIndex = 7;
-            this.button_attractions.Text = "Αξιοθέατα";
-            this.button_attractions.UseVisualStyleBackColor = false;
-            this.button_attractions.Click += new System.EventHandler(this.button_attractions_Click);
-            this.button_attractions.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.button_attractions.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -105,13 +67,13 @@
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
             this.label1.Location = new System.Drawing.Point(10, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 31);
+            this.label1.Size = new System.Drawing.Size(276, 31);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Επισκεπτείτε το Peru";
+            this.label1.Text = "Επισκεφτείτε το Peru";
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(57, 158);
+            this.btnRead.Location = new System.Drawing.Point(19, 5);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(71, 23);
             this.btnRead.TabIndex = 8;
@@ -121,7 +83,7 @@
             // 
             // btnPauseResume
             // 
-            this.btnPauseResume.Location = new System.Drawing.Point(134, 158);
+            this.btnPauseResume.Location = new System.Drawing.Point(108, 5);
             this.btnPauseResume.Name = "btnPauseResume";
             this.btnPauseResume.Size = new System.Drawing.Size(103, 23);
             this.btnPauseResume.TabIndex = 9;
@@ -131,7 +93,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(243, 158);
+            this.btnStop.Location = new System.Drawing.Point(234, 5);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(67, 23);
             this.btnStop.TabIndex = 10;
@@ -175,6 +137,58 @@
             this.panel1.Size = new System.Drawing.Size(200, 155);
             this.panel1.TabIndex = 16;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.OliveDrab;
+            this.panel3.Controls.Add(this.btnStop);
+            this.panel3.Controls.Add(this.btnPauseResume);
+            this.panel3.Controls.Add(this.btnRead);
+            this.panel3.Location = new System.Drawing.Point(13, 157);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(327, 31);
+            this.panel3.TabIndex = 18;
+            // 
+            // button_History
+            // 
+            this.button_History.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button_History.Location = new System.Drawing.Point(448, 366);
+            this.button_History.Name = "button_History";
+            this.button_History.Size = new System.Drawing.Size(74, 60);
+            this.button_History.TabIndex = 5;
+            this.button_History.Text = "Ιστορικό";
+            this.button_History.UseVisualStyleBackColor = true;
+            this.button_History.Click += new System.EventHandler(this.button_History_Click);
+            this.button_History.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button_History.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            // 
+            // button_beaches
+            // 
+            this.button_beaches.BackColor = System.Drawing.Color.White;
+            this.button_beaches.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button_beaches.Location = new System.Drawing.Point(247, 366);
+            this.button_beaches.Name = "button_beaches";
+            this.button_beaches.Size = new System.Drawing.Size(84, 60);
+            this.button_beaches.TabIndex = 6;
+            this.button_beaches.Text = "Παραλίες";
+            this.button_beaches.UseVisualStyleBackColor = false;
+            this.button_beaches.Click += new System.EventHandler(this.button_beaches_Click);
+            this.button_beaches.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button_beaches.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            // 
+            // button_attractions
+            // 
+            this.button_attractions.BackColor = System.Drawing.Color.White;
+            this.button_attractions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button_attractions.Location = new System.Drawing.Point(352, 366);
+            this.button_attractions.Name = "button_attractions";
+            this.button_attractions.Size = new System.Drawing.Size(78, 60);
+            this.button_attractions.TabIndex = 7;
+            this.button_attractions.Text = "Αξιοθέατα";
+            this.button_attractions.UseVisualStyleBackColor = false;
+            this.button_attractions.Click += new System.EventHandler(this.button_attractions_Click);
+            this.button_attractions.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button_attractions.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,13 +197,11 @@
             this.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.peru_backgr;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(762, 438);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnStop);
-            this.Controls.Add(this.btnPauseResume);
-            this.Controls.Add(this.btnRead);
-            this.Controls.Add(this.button_attractions);
             this.Controls.Add(this.button_beaches);
+            this.Controls.Add(this.button_attractions);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.button_History);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
@@ -198,16 +210,15 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.richTextBox1, 0);
-            this.Controls.SetChildIndex(this.button_History, 0);
-            this.Controls.SetChildIndex(this.button_beaches, 0);
-            this.Controls.SetChildIndex(this.button_attractions, 0);
-            this.Controls.SetChildIndex(this.btnRead, 0);
-            this.Controls.SetChildIndex(this.btnPauseResume, 0);
-            this.Controls.SetChildIndex(this.btnStop, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.button_History, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.button_attractions, 0);
+            this.Controls.SetChildIndex(this.button_beaches, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,9 +226,6 @@
 
         #endregion
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button_History;
-        private System.Windows.Forms.Button button_beaches;
-        private System.Windows.Forms.Button button_attractions;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.Button btnPauseResume;
@@ -226,5 +234,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button_History;
+        private System.Windows.Forms.Button button_beaches;
+        private System.Windows.Forms.Button button_attractions;
     }
 }

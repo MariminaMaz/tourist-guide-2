@@ -35,6 +35,7 @@
             this.btn02 = new System.Windows.Forms.Button();
             this.btn01 = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn03
@@ -64,7 +65,7 @@
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btn06.ForeColor = System.Drawing.Color.Orange;
             this.btn06.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btn06.Location = new System.Drawing.Point(572, 240);
+            this.btn06.Location = new System.Drawing.Point(572, 232);
             this.btn06.Name = "btn06";
             this.btn06.Size = new System.Drawing.Size(199, 159);
             this.btn06.TabIndex = 13;
@@ -80,7 +81,7 @@
             this.btn05.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btn05.ForeColor = System.Drawing.Color.Orange;
-            this.btn05.Location = new System.Drawing.Point(298, 240);
+            this.btn05.Location = new System.Drawing.Point(298, 232);
             this.btn05.Name = "btn05";
             this.btn05.Size = new System.Drawing.Size(199, 159);
             this.btn05.TabIndex = 12;
@@ -96,7 +97,7 @@
             this.btn04.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btn04.ForeColor = System.Drawing.Color.Orange;
-            this.btn04.Location = new System.Drawing.Point(30, 240);
+            this.btn04.Location = new System.Drawing.Point(30, 232);
             this.btn04.Name = "btn04";
             this.btn04.Size = new System.Drawing.Size(199, 159);
             this.btn04.TabIndex = 11;
@@ -143,13 +144,25 @@
             // 
             this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.back.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.back.Location = new System.Drawing.Point(30, 405);
+            this.back.Location = new System.Drawing.Point(30, 397);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(75, 33);
+            this.back.Size = new System.Drawing.Size(75, 41);
             this.back.TabIndex = 14;
             this.back.Text = "Back";
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.Location = new System.Drawing.Point(118, 410);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(667, 28);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Καντέ κλικ σε κάποιο προορισμό για να δείτε την περιγραφή";
             // 
             // PointsOfInterestForm
             // 
@@ -157,6 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.back);
             this.Controls.Add(this.btn06);
             this.Controls.Add(this.btn05);
@@ -173,6 +187,7 @@
             this.Controls.SetChildIndex(this.btn05, 0);
             this.Controls.SetChildIndex(this.btn06, 0);
             this.Controls.SetChildIndex(this.back, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +202,6 @@
         private System.Windows.Forms.Button btn02;
         private System.Windows.Forms.Button btn01;
         private System.Windows.Forms.Button back;
+        private System.Windows.Forms.Label label1;
     }
 }

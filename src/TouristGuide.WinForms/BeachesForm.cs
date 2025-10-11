@@ -9,46 +9,42 @@ namespace TouristGuide.WinForms
     {
         private readonly string _dbPath;
         private readonly string _connStr;
+
         public BeachesForm()
         {
             InitializeComponent();
-            _dbPath = Path.Combine(Application.StartupPath, @"..\..\Tourist_Guide.db");    // Path προς την βάση 
+
+            // Ορισμός διαδρομής προς τη βάση
+            _dbPath = Path.Combine(Application.StartupPath, @"..\..\Tourist_Guide.db");
             _dbPath = Path.GetFullPath(_dbPath);
             _connStr = $"Data Source={_dbPath};Version=3;";
-            WireButtons();
         }
-        private void WireButtons()
-        {
-            button9.Click += OnBeachClick;
-            button10.Click += OnBeachClick;
-            button3.Click += OnBeachClick;
-            button4.Click += OnBeachClick;
-            button5.Click += OnBeachClick;
-            button6.Click += OnBeachClick;
 
-            button9.Tag = "Máncora Beach";
-            button10.Tag = "Los Órganos Beach";
-            button3.Tag = "Punta Sal Beach";
-            button4.Tag = "Playa Roja";
-            button5.Tag = "Las Pocitas";
-            button6.Tag = "Belluga";
-        }
         private void OnBeachClick(object sender, EventArgs e)
         {
             if (Session.IsVisitor)
+                return;
+
+            if (!(sender is Button btn))
+                return;
+
+            string beachName = btn.Text.Trim();
+
+            var item = GetItem(beachName);
+            if (item.ItemId == null)
             {
+                MessageBox.Show("Δεν βρέθηκαν πληροφορίες για αυτήν την παραλία.",
+                    "Σφάλμα", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var btn = sender as Button;
-            if (btn == null) return;
-
-            string beachName = btn.Tag as string ?? btn.Text;
-            var item = GetItem(beachName);
             SaveHistory(Session.UserId, item.ItemId.Value);
-             // Εμφάνιση περιγραφής
-             MessageBox.Show($"{beachName}\n\n{item.Description}","Πληροφορίες", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Εμφάνιση περιγραφής
+            MessageBox.Show($"{beachName}\n\n{item.Description}", "Πληροφορίες",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
         private (int? ItemId, string Description) GetItem(string name)
         {
             using (var conn = new SQLiteConnection(_connStr))
@@ -62,8 +58,8 @@ namespace TouristGuide.WinForms
                 {
                     if (reader.Read())
                     {
-                        int itemId = reader.GetInt32(0);           // Item_id
-                        string description = reader.GetString(1);  // Description
+                        int itemId = reader.GetInt32(0);
+                        string description = reader.GetString(1);
                         return (itemId, description);
                     }
                 }
@@ -73,7 +69,8 @@ namespace TouristGuide.WinForms
         private void SaveHistory(int userId, int itemId)
         {
             using (var conn = new SQLiteConnection(_connStr))
-            using (var cmd = new SQLiteCommand("INSERT INTO UserHistory (User_id, Item_id) VALUES (@u, @i)", conn))
+            using (var cmd = new SQLiteCommand(
+                "INSERT INTO UserHistory (User_id, Item_id) VALUES (@u, @i)", conn))
             {
                 conn.Open();
                 cmd.Parameters.AddWithValue("@u", userId);
@@ -87,8 +84,6 @@ namespace TouristGuide.WinForms
             var previous = new MainForm();
             previous.Show();
         }
-        private void BeachesForm_Load(object sender, EventArgs e)
-        {
-        }
+        private void BeachesForm_Load(object sender, EventArgs e) { }
     }
 }

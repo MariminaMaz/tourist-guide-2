@@ -142,5 +142,47 @@ namespace TouristGuide.WinForms
                 }
             }
         }
+        private void clear_history_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show(
+                "Είσαι σίγουρος ότι θέλεις να διαγράψεις ολόκληρο το ιστορικό σου;",
+                "Επιβεβαίωση Διαγραφής",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirm == DialogResult.Yes)
+            {
+                try
+                {
+                    string dbPath = Path.Combine(Application.StartupPath, @"..\..\Tourist_Guide.db");
+                    dbPath = Path.GetFullPath(dbPath);
+                    string connStr = $"Data Source={dbPath};Version=3;";
+
+                    using (var conn = new SQLiteConnection(connStr))
+                    {
+                        conn.Open();
+                        string deleteQuery = "DELETE FROM UserHistory WHERE User_id = @UserId;";
+                        using (var cmd = new SQLiteCommand(deleteQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@UserId", Session.UserId);
+                            int rows = cmd.ExecuteNonQuery();
+
+                            MessageBox.Show($"Διαγράφηκαν {rows} εγγραφές από το ιστορικό σου.",
+                                "Επιτυχία", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    // Καθαρίζουμε και τα ListBox
+                    listBox1.Items.Clear();
+                    listBox1.Items.Add("(Δεν υπάρχει ιστορικό)");
+                    listBox2.Items.Clear();
+                    listBox2.Items.Add("(Δεν υπάρχει ιστορικό)");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Σφάλμα κατά τη διαγραφή του ιστορικού:\r\n" + ex.Message,
+                        "Σφάλμα", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
