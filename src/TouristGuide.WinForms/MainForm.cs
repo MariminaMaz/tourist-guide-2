@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Globalization;
 using System.Speech.Synthesis;
+using System.Media;
 using System.Windows.Forms;
 
 namespace TouristGuide.WinForms
@@ -11,13 +12,16 @@ namespace TouristGuide.WinForms
         private SpeechSynthesizer tts = new SpeechSynthesizer();
         private Image[] slideshowImages;
         private int currentIndex = 0;
+        private readonly SoundPlayer _tropical = new SoundPlayer(Properties.Resources.tropical);
 
         public MainForm()
         {
             InitializeComponent();
+            _tropical.Load();
         }
         private void button_beaches_Click(object sender, EventArgs e)
         {
+            _tropical.Play();
             BeachesForm main = new BeachesForm();
             main.Show();
             this.Hide();
@@ -25,6 +29,7 @@ namespace TouristGuide.WinForms
 
         private void button_attractions_Click(object sender, EventArgs e)
         {
+            _tropical.Play();
             PointsOfInterestForm main = new PointsOfInterestForm();
             main.Show();
             this.Hide();

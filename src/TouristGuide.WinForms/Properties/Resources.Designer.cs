@@ -219,5 +219,14 @@ namespace TouristGuide.WinForms.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream tropical {
+            get {
+                return ResourceManager.GetStream("tropical", resourceCulture);
+            }
+        }
     }
 }
