@@ -13,6 +13,8 @@ namespace TouristGuide.WinForms
         private Image[] slideshowImages;
         private int currentIndex = 0;
         private readonly SoundPlayer _tropical = new SoundPlayer(Properties.Resources.tropical);
+        private bool isSoundOn;
+
 
         public MainForm()
         {
@@ -21,7 +23,10 @@ namespace TouristGuide.WinForms
         }
         private void button_beaches_Click(object sender, EventArgs e)
         {
-            _tropical.Play();
+            if (isSoundOn)
+            {
+                _tropical.Play();
+            }
             BeachesForm main = new BeachesForm();
             main.Show();
             this.Hide();
@@ -29,7 +34,10 @@ namespace TouristGuide.WinForms
 
         private void button_attractions_Click(object sender, EventArgs e)
         {
-            _tropical.Play();
+            if (isSoundOn)
+            {
+                _tropical.Play();
+            }
             PointsOfInterestForm main = new PointsOfInterestForm();
             main.Show();
             this.Hide();
@@ -55,6 +63,8 @@ namespace TouristGuide.WinForms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            _tropical.PlayLooping(); // ξεκινά ο ήχος με το άνοιγμα
+            isSoundOn = true;
             if (Session.IsVisitor)
             {
                 button_History.Visible = false;
@@ -132,6 +142,25 @@ namespace TouristGuide.WinForms
                 currentIndex = 0;
 
             pictureBox1.Image = slideshowImages[currentIndex];
+        }
+
+        private void sound_btn_Click(object sender, EventArgs e)
+        {
+            if (isSoundOn)
+            {
+                _tropical.Stop();
+                isSoundOn = false;
+                sound_btn.Text = "Sound : OFF";
+                sound_btn.BackColor = Color.Red;
+            }
+            else
+            {
+                _tropical.PlayLooping(); 
+                isSoundOn = true;
+                sound_btn.Text = "Sound : ON";
+                sound_btn.BackColor = Color.LimeGreen;
+
+            }
         }
     }
 }

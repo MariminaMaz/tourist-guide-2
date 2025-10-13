@@ -42,6 +42,7 @@
             this.button_History = new System.Windows.Forms.Button();
             this.button_beaches = new System.Windows.Forms.Button();
             this.button_attractions = new System.Windows.Forms.Button();
+            this.sound_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -189,6 +190,18 @@
             this.button_attractions.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
             this.button_attractions.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
+            // sound_btn
+            // 
+            this.sound_btn.BackColor = System.Drawing.Color.LimeGreen;
+            this.sound_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.sound_btn.Location = new System.Drawing.Point(660, 398);
+            this.sound_btn.Name = "sound_btn";
+            this.sound_btn.Size = new System.Drawing.Size(90, 28);
+            this.sound_btn.TabIndex = 20;
+            this.sound_btn.Text = "Sound : ON";
+            this.sound_btn.UseVisualStyleBackColor = false;
+            this.sound_btn.Click += new System.EventHandler(this.sound_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +210,7 @@
             this.BackgroundImage = global::TouristGuide.WinForms.Properties.Resources.peru_backgr;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(762, 438);
+            this.Controls.Add(this.sound_btn);
             this.Controls.Add(this.button_beaches);
             this.Controls.Add(this.button_attractions);
             this.Controls.Add(this.panel3);
@@ -215,6 +229,7 @@
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.button_attractions, 0);
             this.Controls.SetChildIndex(this.button_beaches, 0);
+            this.Controls.SetChildIndex(this.sound_btn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -238,5 +253,6 @@
         private System.Windows.Forms.Button button_History;
         private System.Windows.Forms.Button button_beaches;
         private System.Windows.Forms.Button button_attractions;
+        private System.Windows.Forms.Button sound_btn;
     }
 }
